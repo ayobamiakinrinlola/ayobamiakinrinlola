@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ayobami Emmanuel – Virtual Assistant & Administrative Professional</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#1a1a2e;--ink2:#2d2d44;--gold:#c9a84c;--gold2:#e8c97a;--cream:#faf8f3;--muted:#6b6880;--light:#f0ede6;--white:#ffffff;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.6}
+a{text-decoration:none;color:inherit}
+
+/* NAV */
+nav{background:var(--ink);padding:16px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(201,168,76,0.15)}
+.nav-logo{font-family:'Playfair Display',serif;color:var(--gold);font-size:18px;font-weight:700;letter-spacing:0.5px}
+.nav-links{display:flex;gap:28px}
+.nav-links a{font-size:13px;color:rgba(255,255,255,0.6);letter-spacing:0.5px;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+
+/* HERO */
+.hero{background:var(--ink);color:var(--white);padding:100px 40px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:400px;height:400px;border-radius:50%;border:2px solid rgba(201,168,76,0.15);pointer-events:none}
+.hero::after{content:'';position:absolute;top:-20px;right:-20px;width:250px;height:250px;border-radius:50%;border:1px solid rgba(201,168,76,0.1);pointer-events:none}
+.hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:1}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.35);color:var(--gold2);font-size:12px;letter-spacing:1.5px;text-transform:uppercase;padding:6px 18px;border-radius:40px;margin-bottom:32px;font-weight:500}
+.hero-badge::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--gold);display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+h1.name{font-family:'Playfair Display',serif;font-size:clamp(40px,6vw,72px);font-weight:700;line-height:1.1;margin-bottom:20px}
+h1.name span{color:var(--gold)}
+.hero-sub{font-size:18px;color:rgba(255,255,255,0.6);font-weight:300;max-width:560px;line-height:1.85;margin-bottom:44px}
+.hero-stats{display:flex;gap:48px;flex-wrap:wrap;margin-bottom:44px}
+.stat{border-left:2px solid var(--gold);padding-left:18px}
+.stat-num{font-family:'Playfair Display',serif;font-size:32px;color:var(--gold2);font-weight:700;line-height:1}
+.stat-label{font-size:12px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:1px;margin-top:4px}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn-primary{background:var(--gold);color:var(--ink);padding:14px 32px;border-radius:4px;font-weight:500;font-size:14px;cursor:pointer;transition:background .2s;letter-spacing:0.3px;display:inline-block}
+.btn-primary:hover{background:var(--gold2)}
+.btn-outline{border:1px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.8);padding:14px 32px;border-radius:4px;font-size:14px;cursor:pointer;transition:all .2s;display:inline-block}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* SECTIONS */
+.section{padding:72px 40px;max-width:800px;margin:0 auto}
+.section-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:8px}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);font-weight:700;color:var(--ink);margin-bottom:36px;line-height:1.2}
+.section-title span{color:var(--muted)}
+.divider{height:1px;background:linear-gradient(90deg,rgba(201,168,76,0.4) 0%,transparent 100%);margin:0 40px}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.service-card{background:var(--white);border:1px solid #e8e3d8;border-radius:10px;padding:28px 22px;position:relative;overflow:hidden;transition:border-color .25s,transform .25s,box-shadow .25s}
+.service-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 40px rgba(201,168,76,0.1)}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold2))}
+.service-icon{width:40px;height:40px;background:rgba(201,168,76,0.1);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;font-size:18px}
+.service-name{font-weight:500;font-size:15px;color:var(--ink);margin-bottom:8px}
+.service-desc{font-size:13px;color:var(--muted);line-height:1.65}
+
+/* TOOLS */
+.tools-section{background:var(--ink);padding:64px 40px}
+.tools-inner{max-width:800px;margin:0 auto}
+.tools-grid{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px}
+.tool-pill{background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.75);padding:9px 20px;border-radius:40px;font-size:13px;transition:all .2s;cursor:default}
+.tool-pill:hover{background:rgba(201,168,76,0.15);border-color:rgba(201,168,76,0.4);color:var(--gold2)}
+
+/* EXPERIENCE */
+.exp-list{display:flex;flex-direction:column}
+.exp-item{display:grid;grid-template-columns:150px 1fr;gap:24px;padding:32px 0;border-bottom:1px solid #e8e3d8}
+.exp-item:last-child{border-bottom:none}
+.exp-date{font-size:12px;color:var(--muted);font-weight:500;letter-spacing:0.5px;padding-top:3px}
+.exp-role{font-weight:500;font-size:16px;color:var(--ink);margin-bottom:3px}
+.exp-org{font-size:13px;color:var(--gold);font-weight:500;margin-bottom:10px}
+.exp-desc{font-size:13px;color:var(--muted);line-height:1.75}
+.exp-highlights{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.tag{background:rgba(201,168,76,0.1);color:#7a5f28;border:1px solid rgba(201,168,76,0.28);font-size:11px;padding:4px 12px;border-radius:20px;font-weight:500}
+
+/* EDUCATION */
+.edu-section{background:var(--light);padding:64px 40px}
+.edu-inner{max-width:800px;margin:0 auto}
+.edu-card{background:var(--white);border:1px solid #e8e3d8;border-radius:10px;padding:28px;display:flex;align-items:flex-start;gap:22px;margin-bottom:28px}
+.edu-icon{width:52px;height:52px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px}
+.edu-deg{font-family:'Playfair Display',serif;font-weight:700;font-size:18px;color:var(--ink);margin-bottom:5px}
+.edu-school{font-size:13px;color:var(--muted);margin-bottom:10px}
+.edu-badge{display:inline-block;background:rgba(201,168,76,0.12);color:#7a5f28;font-size:11px;font-weight:500;padding:4px 12px;border-radius:20px;border:1px solid rgba(201,168,76,0.28)}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}
+.cert-card{background:var(--white);border:1px solid #e8e3d8;border-radius:10px;padding:20px;display:flex;align-items:flex-start;gap:14px;transition:border-color .2s}
+.cert-card:hover{border-color:var(--gold)}
+.cert-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:5px}
+.cert-name{font-size:13px;font-weight:500;color:var(--ink);margin-bottom:3px}
+.cert-org{font-size:12px;color:var(--muted)}
+
+/* CONTACT */
+.contact-section{background:var(--ink);padding:80px 40px;color:var(--white)}
+.contact-inner{max-width:800px;margin:0 auto;text-align:center}
+.contact-sub{font-size:16px;color:rgba(255,255,255,0.5);margin-bottom:44px;font-weight:300;line-height:1.8}
+.contact-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap}
+.contact-link{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);padding:16px 28px;border-radius:6px;font-size:14px;color:rgba(255,255,255,0.8);transition:all .2s;cursor:pointer}
+.contact-link:hover{background:rgba(201,168,76,0.15);border-color:rgba(201,168,76,0.4);color:var(--gold2)}
+.contact-link svg{width:18px;height:18px;opacity:0.7;flex-shrink:0}
+
+/* FOOTER */
+footer{background:#0f0f1e;padding:24px 40px;text-align:center;font-size:12px;color:rgba(255,255,255,0.2);letter-spacing:0.5px}
+
+/* RESPONSIVE */
+@media(max-width:600px){
+  nav{padding:14px 20px}
+  .nav-links{gap:16px}
+  .nav-links a{font-size:12px}
+  .hero{padding:70px 24px 60px}
+  .section{padding:56px 24px}
+  .tools-section,.edu-section,.contact-section{padding:56px 24px}
+  .exp-item{grid-template-columns:1fr}
+  .hero-stats{gap:28px}
+  .contact-links{flex-direction:column;align-items:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Ayobami E.</div>
+  <div class="nav-links">
+    <a href="#services">Services</a>
+    <a href="#experience">Experience</a>
+    <a href="#education">Education</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">Available for hire</div>
+    <h1 class="name">Akinrinlola<br><span>Ayobami Emmanuel</span></h1>
+    <p class="hero-sub">Virtual Assistant &amp; Administrative Professional with 5+ years of experience keeping executives organized, communications sharp, and operations running seamlessly.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">5+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6</div>
+        <div class="stat-label">Organizations Supported</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">B.Sc</div>
+        <div class="stat-label">Mass Communication</div>
+      </div>
+    </div>
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Hire Me</a>
+      <a href="#experience" class="btn-outline">See My Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="section">
+    <div class="section-label">What I offer</div>
+    <div class="section-title">Services <span>I specialize in</span></div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📅</div>
+        <div class="service-name">Calendar &amp; Schedule Management</div>
+        <div class="service-desc">Managing appointments, travel logistics, and executive schedules with precision and discretion.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📧</div>
+        <div class="service-name">Email &amp; Correspondence</div>
+        <div class="service-desc">Drafting, organizing, and managing professional communications, memos, and reports.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <div class="service-name">Data Entry &amp; Reporting</div>
+        <div class="service-desc">Accurate data collection, Google Sheets tracking, and project reporting for teams and stakeholders.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📁</div>
+        <div class="service-name">Document &amp; File Management</div>
+        <div class="service-desc">Setting up digital archives, managing records, and maintaining confidential filing systems.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">📱</div>
+        <div class="service-name">Social Media Management</div>
+        <div class="service-desc">Content creation, scheduling, and analytics across platforms using Canva and Meta tools.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🎯</div>
+        <div class="service-name">Event &amp; Project Coordination</div>
+        <div class="service-desc">End-to-end planning and execution of high-profile events, media coverage, and logistics.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- TOOLS -->
+<section class="tools-section">
+  <div class="tools-inner">
+    <div class="section-label" style="color:var(--gold)">Tools &amp; Tech</div>
+    <div class="section-title" style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);color:var(--white);margin-bottom:0">My <span style="color:rgba(255,255,255,0.35)">technical toolkit</span></div>
+    <div class="tools-grid">
+      <div class="tool-pill">Google Workspace</div>
+      <div class="tool-pill">Microsoft Office Suite</div>
+      <div class="tool-pill">Canva</div>
+      <div class="tool-pill">Adobe Photoshop</div>
+      <div class="tool-pill">Adobe Illustrator</div>
+      <div class="tool-pill">CapCut</div>
+      <div class="tool-pill">Meta Ads Manager</div>
+      <div class="tool-pill">Google Ads</div>
+      <div class="tool-pill">Google Sheets &amp; Forms</div>
+      <div class="tool-pill">Google Calendar</div>
+      <div class="tool-pill">Gmail &amp; Outlook</div>
+      <div class="tool-pill">Google Drive</div>
+      <div class="tool-pill">Google Meet</div>
+      <div class="tool-pill">HubSpot</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section">
+    <div class="section-label">Background</div>
+    <div class="section-title">Work <span>Experience</span></div>
+    <div class="exp-list">
+      <div class="exp-item">
+        <div class="exp-date">Jun 2024 – Present</div>
+        <div>
+          <div class="exp-role">Administrative Associate</div>
+          <div class="exp-org">C.A.C. General Secretariat, Ibadan</div>
+          <div class="exp-desc">Manage executive correspondence, confidential records, and the General Secretary's schedule. Coordinate clergy mobilization programs and national church events while driving process improvements.</div>
+          <div class="exp-highlights"><span class="tag">Executive Support</span><span class="tag">Records Management</span><span class="tag">Event Coordination</span></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Sep 2023 – May 2024</div>
+        <div>
+          <div class="exp-role">Communication / ICT Officer</div>
+          <div class="exp-org">OYSADA – L-PRES Project, Ibadan</div>
+          <div class="exp-desc">Led beneficiary mapping, managed ICT workflows, and produced multimedia documentation that boosted project visibility. Designed digital content and coordinated media partnerships.</div>
+          <div class="exp-highlights"><span class="tag">Data Collection</span><span class="tag">Google Workspace</span><span class="tag">Content Design</span></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Aug 2022 – Sep 2023</div>
+        <div>
+          <div class="exp-role">Communication Officer</div>
+          <div class="exp-org">NG-CARES, Ibadan</div>
+          <div class="exp-desc">Developed knowledge management strategies, ran social media campaigns, and produced newsletters and success stories for stakeholder engagement. Used Google Sheets for reporting.</div>
+          <div class="exp-highlights"><span class="tag">Social Media</span><span class="tag">Reporting</span><span class="tag">Stakeholder Engagement</span></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Jan 2021 – Jul 2022</div>
+        <div>
+          <div class="exp-role">Communication &amp; Event Officer</div>
+          <div class="exp-org">Sparknotion Limited, Ibadan</div>
+          <div class="exp-desc">Executed PR strategies, managed high-profile events, and led a team of five photographers and videographers. Oversaw content strategy and corporate communication planning.</div>
+          <div class="exp-highlights"><span class="tag">PR Strategy</span><span class="tag">Team Leadership</span><span class="tag">Event Management</span></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Dec 2019 – Nov 2020</div>
+        <div>
+          <div class="exp-role">Camera Operator</div>
+          <div class="exp-org">Nigeria Television Authority (NTA), Asaba</div>
+          <div class="exp-desc">Operated studio and field cameras for live broadcasts and recorded programs. Provided technical support for news and special coverage.</div>
+          <div class="exp-highlights"><span class="tag">Broadcast Media</span><span class="tag">Video Production</span></div>
+        </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">Sep 2018 – Jul 2019</div>
+        <div>
+          <div class="exp-role">Student Radio Presenter</div>
+          <div class="exp-org">Bingham 89.9 FM, Nasarawa State</div>
+          <div class="exp-desc">Hosted engaging radio programs, conducted in-depth research for content, and led live coverage of university elections demonstrating strong journalism and broadcasting skills.</div>
+          <div class="exp-highlights"><span class="tag">Broadcasting</span><span class="tag">Journalism</span><span class="tag">Live Coverage</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" class="edu-section">
+  <div class="edu-inner">
+    <div class="section-label">Qualifications</div>
+    <div class="section-title" style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);color:var(--ink);margin-bottom:28px">Education &amp; <span style="color:var(--muted)">Certifications</span></div>
+    <div class="edu-card">
+      <div class="edu-icon">🎓</div>
+      <div>
+        <div class="edu-deg">B.Sc. Mass Communication</div>
+        <div class="edu-school">Bingham University, Karu, Nasarawa State · 2019</div>
+        <span class="edu-badge">Second Class Upper</span>
+      </div>
+    </div>
+    <div class="certs-grid">
+      <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Digital Marketing</div><div class="cert-org">HubSpot Academy · 2026</div></div></div>
+      <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Logo Design – Adobe Illustrator</div><div class="cert-org">Posterion · 2024</div></div></div>
+      <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Lead Generation Training</div><div class="cert-org">FunnelHackers Club · 2024</div></div></div>
+      <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Master Lead Generation</div><div class="cert-org">Blue-Heart Academy · 2023</div></div></div>
+      <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Graphic Design Training</div><div class="cert-org">VSL Concepts · 2022</div></div></div>
+      <div class="cert-card"><div class="cert-dot"></div><div><div class="cert-name">Soft Skills Training</div><div class="cert-org">Jobberman · 2020</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <div class="contact-inner">
+    <div class="section-label" style="color:var(--gold)">Get in touch</div>
+    <div style="font-family:'Playfair Display',serif;font-size:clamp(26px,4vw,40px);font-weight:700;color:var(--white);margin-bottom:16px;line-height:1.2">Let's work <span style="color:var(--gold)">together</span></div>
+    <p class="contact-sub">Ready to bring organization, efficiency, and clarity to your operations?<br>Let's talk — I'd love to hear about your needs.</p>
+    <div class="contact-links">
+      <a href="mailto:ayobamiakinrinlola@gmail.com" class="contact-link">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/></svg>
+        ayobamiakinrinlola@gmail.com
+      </a>
+      <a href="tel:+2349035678425" class="contact-link">
+        <svg fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+        09035678425
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  &copy; 2025 Akinrinlola Ayobami Emmanuel &nbsp;&middot;&nbsp; Virtual Assistant &amp; Administrative Professional &nbsp;&middot;&nbsp; Ibadan, Nigeria
+</footer>
+
+</body>
+</html>
